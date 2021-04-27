@@ -1,0 +1,247 @@
+body{
+    font-family: 'Yeseva One', cursive;
+}
+
+h1{
+    font-size: 66px;
+    font-weight: 600; line-height: 80px;
+}
+
+h2{
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+p{
+    font-size: 18px;
+    color: #999999;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+
+a i{
+    font-size: 22px;
+    color: #ffffff;
+}
+
+section{
+    padding: 120px;
+}
+
+
+
+#registro {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+#registro:hover{
+    color: #D1913C;
+}
+.bg-light-grey { background-color: #f5f5f5;}
+
+.topmargin-xs{ margin-top: 15px; }
+.topmargin-sm{ margin-top: 30px; }
+.topmargin-lg{ margin-top: 60px; }
+
+.text-center{
+    padding-left: 40%;
+}
+
+.text-gold{
+    color: #1a1a1a;
+}
+
+.text-gold:hover{
+    color: #D1913C;
+}
+s
+
+.navbar{
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+
+.nav-link{ color: #1a1a1a}
+.nav-link:hover{ color: #D1913C}
+
+.logo-sisu{
+    min-width: 160px;
+    max-width: 180px;
+}
+
+.navbar-toggler { font-size: 40px}
+.navbar-toggler:focus { outline: none;}
+
+#hero{
+    background-color: rgba(0,0,0,0.6);
+    background-image: url("/img/hero.jpg");
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 700px;
+}
+
+#hero p{
+    color: #ffffff;
+}
+
+.content-center{
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.portafolio-container{
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+.portafolio-container img {
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    width: 630px;
+    height: 680px;
+}
+
+.portafolio-container:hover img {
+    -moz-tranforms: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.portafolio-details{
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    z-index: 9000;
+}
+
+.portafolio-details h2{
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+.portafolio-container p{
+    font-size: 18px;
+
+}
+
+.portafolio-details a h2, .portafolio-details a p{
+    color: #ffffff;
+}
+
+.member-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+.member-details {
+    position: absolute;
+    color: #ffffff;
+    bottom: 0px;
+    left: 20px;
+}
+
+.member-details span{
+    font-size: 14px;
+    padding-left: 350px;
+    color: #ffffff;
+}
+
+.member-details h5 {
+    padding-left: 350px;
+}
+
+.member-details i{
+    padding: 0 5px;
+}
+
+.img-fluid1{
+    padding-left: 45%;
+}
+
+.list-inline{
+    padding-left: 350px;
+}
+
+.raya{
+    width: 400px;
+    height: 2px;
+    background: #fff;
+    border: none;
+    margin-top: 5px;
+}
+
+.container h2{
+    text-align: center;
+}
+
+#envios .container hr{
+    width: 400px;
+    height: 2px;
+    background: #1a1a1a;
+    border: none;
+    margin-top: 5px;
+}
+
+.product {
+	padding: 10px;
+	
+}
+
+.envio-container{
+    margin: 15px 0;
+}
+
+.plans {
+    padding: 50px 80px;
+    border-radius: 2px;
+    min-width: 450px;
+}
+
+.plan-light {
+    background-color: #ffffff;
+    border: 2px solid #1a1a1a;
+}
+
+.plan-dark {
+    background-color: #D1913C;
+    border: 2px solid #1a1a1a;
+    color: #f5f5f5;
+}
+
+.plan-dark h2{
+    color: #f5f5f5;
+}
+
+.plans h2{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.plans span{
+    font-size: 20px;
+}
+
+.plans ul {
+    list-style: square;
+}
+
+@media (max-width: 575.98px) {  
+    h1{ font-size: 40px; line-height: normal;}
+    .plans { min-width: unset; padding: 40px;}
+}
+
+
+

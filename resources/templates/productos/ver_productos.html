@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="master">
+<head>
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/css/fa.min.csss}" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/css/styleProducto.css}" rel="stylesheet" type="text/css"/>
+	<link th:href="@{/css/Style.css}" rel="stylesheet" type="text/css"/>
+	<title>Sistema de Ventas Sisu Acc</title>
+</head>
+<body>
+<nav th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml"
+     class="navbar navbar-expand-md navbar-white bg-white fixed-top">
+    <a class="navbar-brand" target="_blank" href="#"><image src="/img/Logo.jpg" class="logo-sisu" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" id="botonMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+                <a class="nav-link" th:href="@{/home}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/vender/}">Vender</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/productos/mostrar}">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/ventas/}">Ventas</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main layout:fragment="contenido">
+    <div class="col-12">
+        <h2 class="product">Productos</h2>
+        <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+             th:text="${mensaje}"
+             class="alert">
+        </div>
+        <a class="btn btn-success mb-2" th:href="@{/productos/agregar}">Agregar</a>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Código</th>
+                    <th>Precio</th>
+                    <th>Existencia</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.codigo}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td th:text="${producto.existencia}"></td>
+                    <td>
+                        <a class="btn btn-warning" th:href="@{/productos/editar/} + ${producto.id}">Editar <i
+                                class="fa fa-edit"></i></a>
+                    </td>
+                    <td>
+                        <form th:action="@{/productos/eliminar}" method="post">
+                            <input type="hidden" name="id" th:value="${producto.id}"/>
+                            <button type="submit" class="btn btn-danger">Eliminar <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<footer th:fragment="pie" class="px-2 py-2 fixed-bottom bg-dark" xmlns:th="http://www.w3.org/1999/xhtml">
+    <span class="text-muted">Sistema de ventas SisuAcc
+        <i class="fa fa-heart"></i>
+        por
+        <a class="text-white" href="#">Maxi</a>
+    </span>
+</footer>
+</body>
+</html>

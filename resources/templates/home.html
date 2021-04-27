@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="/css/Style.css" rel="stylesheet">
+
+
+    <title>Sisu Accesesorios</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+    	<div class="container">
+        <a class="navbar-brand"><image src="img/Logo.jpg" class="logo-sisu" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="icon ion-md-menu"></i>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acercaMi">Acerca de mi</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Catalogo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="catalogo.html">Aros</a>
+                <a class="dropdown-item" href="#">Pulseras</a>
+                <a class="dropdown-item" href="#">Scrunchies</a>
+                <a class="dropdown-item" href="#">Pañuelos</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/login}" id="inicioSesion" sec:authorize="not isAuthenticated()">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Registro.html" id="registro" sec:authorize="not isAuthenticated()">Registrarse</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" sec:authentication="name" sec:authorize="isAuthenticated()">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" th:href="@{/userForm}">Lista de usuarios</a>
+              <a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/productos/mostrar}">Lista de Productos</a>
+              <a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/vender/limpiar}">Vender</a>
+              <a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{ventas/}">Ver ventas</a>
+              <form id="logoutForm" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                <a class="dropdown-item" href="#" onclick="document.getElementById('logoutForm').submit();">Cerrar Sesión</a>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+
+      <section id="hero">
+        <div class="container">
+          <div class="content-center topmargin-lg">
+          <h1>Acerca de Sisu</h1>
+          <hr class="raya">
+          <p>Sisu mas que una tienda de ropa es una marca, empezando como solo una tienda y llegando a ser una marca. </p>
+          <p>Desde sus inicios se comenzó con pulseras hasta llegar a ser lo que es hoy en día, vendiendo pulseras, collares, aros, ropa, etc.</p>
+        </div>
+
+        
+        </div>
+      </div>
+      </section>
+
+      <section id="portafolio">
+        <div class="container-fluid">
+          <div class="content-center">
+            <h2>Novedades</h2>
+            <p>Los productos mas vendidos y mejor valorados.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="portafolio-container">
+              <div class="portafolio-details">
+                <a href="#">
+                  <h2>Pulserita margaritas</h2>
+                </a>
+                <a  href="#">
+                  <p>Muchos colores en stock.</p>
+                </a>
+              </div>
+              <img src="img/img-1.png" class="img-fluid" alt="img1">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="portafolio-container">
+              <div class="portafolio-details">
+                <a href="#">
+                  <h2>Scrunchie con estampa</h2>
+                </a>
+                <a  href="#">
+                  <p>Mejoro tu cabello? Yo las vengo usando hace meses y noto los cambios</p>
+                </a>
+              </div>
+              <img src="img/img-2.png" class="img-fluid" alt="img2">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="portafolio-container">
+              <div class="portafolio-details">
+                <a href="#">
+                  <h2>Aritos butterflay</h2>
+                </a>
+                <a  href="#">
+                  <p>Re feliz con todo lo nuevo que está ingresando 🙆🏼‍♀️ está temporada trajo muchas cosas lindas, una de esas cositas son estos aritos HERMOSOS</p>
+                </a>
+              </div>
+              <img src="img/img-3.png" class="img-fluid" alt="img3">
+            </div>
+          </div>
+        <div class="col-md-6">
+          <div class="portafolio-container">
+            <div class="portafolio-details">
+              <a href="#">
+                <h2>Pulseritas en stock</h2>
+              </a>
+              <a  href="#">
+                <p>El Jamsa o Hamsa ✋🏻 es un símbolo en forma de mano popular en todo el Oriente Medio y África del Norte.​</p>
+              </a>
+            </div>
+            <img src="img/img-4.png" class="img-fluid" alt="img4">
+          </div>
+        </div>
+
+        <div class="text-center topmargin-sm">
+          <p>Mas cositas en el catalogo</p>
+          <a href="catalogo.html">Ver Cantalogo</a>
+        </div>
+        </div>
+      </section>
+
+      <section id="aboutus" class="bg-light-grey">
+        <div class="container">
+          <div class="content-center">
+            <h2><b>¿Quien soy?</b></h2>
+            <p>Me llamo andrea. Soy estudiante de criminalistica, tengo 19 años y me encanta hacer deportes, practico casi 4 de voley y otros de mis amores es el diseño.</p>
+            <p>Una de mis metas es tener mi propio negocio y expandirme por la región.</p>
+          </div>
+
+          <div class="row">
+            <div class="col-nd-4">
+              <div class="member-container">
+                <div class="member-details">
+                  <h5>Andrea Ayala</h5>
+                  <span>Creadora y diseñadora.</span>
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://www.instagram.com/ayala.andrea_01/"><i class="icon ion-logo-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://twitter.com/AyalaAndrea01"><i class="icon ion-logo-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.facebook.com/andrea.ayala.3158652"><i class="icon ion-logo-facebook"></i></a></li>
+                  </ul>
+                </div>
+              <img src="img/andrea.png" class="img-fluid1" alt="andrea">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="envios">
+        <div class="container">
+            <h2><b>Envíos</b></h2>
+            <hr>
+            <p></p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="envio-container">
+                <div class="plans plan-light">
+                    <h4>Envios a todo Resistencia</h4>
+                    <h2>25% <span>Descuento</span></h2>
+                    <h4>En el envio con una compra mayor a $200</h4>
+                    <ul class="topmargin-xs">
+                      <li>Combina tus productos como quieras.</li>
+                      <li>Envíos 100% seguros.</li>
+                      <li>Consegui cupones.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-6">
+              <div class="envio-container">
+                <div class="plans plan-dark">
+                    <h4>Envios a todo Resistencia</h4>
+                    <h2>Envio<span>/Gratis</span></h2>
+                    <h4>En el envio con una compra mayor a $450</h4>
+                    <ul class="topmargin-xs">
+                      <li>Combina tus productos como quieras.</li>
+                      <li>Envíos 100% seguros.</li>
+                      <li>Consegui cupones.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            </div>
+      </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
